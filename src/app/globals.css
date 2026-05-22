@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --bg: #f8f9fd;
+  --bg-subtle: #eef1f8;
+  --section-tint: #e8edf5;
+  --bg-deep: #0b1220;
+  --bg-navy: #0a1222;
+  --bg-navy-card: #0e1729;
+  --surface: #ffffff;
+  --fg: #0f172a;
+  --fg-muted: #475569;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --accent: #1e3a5f;
+  --teal: #2db3a6;
+  --teal-soft: color-mix(in oklab, var(--teal) 22%, transparent);
+  --accent-on-dark: #7ab7ff;
+  --fg-on-dark: #e8edf7;
+  --fg-on-dark-muted: #94a3b8;
+  --shadow-sm: 0 1px 0 rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 18px 50px -36px rgba(15, 23, 42, 0.35);
+  --shadow-lg: 0 28px 80px -44px rgba(15, 23, 42, 0.42);
+  --hero-bg-mix: #ffffff;
+  --noise-opacity: 0.038;
+  --noise-blend: multiply;
+  --grid-line-major: rgba(15, 23, 42, 0.045);
+  --grid-line-minor: rgba(15, 23, 42, 0.045);
+  --grid-dot: rgba(15, 23, 42, 0.07);
+  --hero-atmosphere-opacity: 0.55;
+  --shadow-header: 0 12px 40px -32px rgba(15, 23, 42, 0.18);
+  --shadow-hover-soft: 0 12px 40px -28px rgba(15, 23, 42, 0.22);
+  --preview-inset-highlight: rgba(255, 255, 255, 0.7);
+  --footer-divider: rgba(255, 255, 255, 0.1);
+  --link-underline-on-dark: rgba(255, 255, 255, 0.2);
+  --ring-on-accent: rgba(255, 255, 255, 0.1);
+}
+
+html.dark {
+  color-scheme: dark;
+  --bg: #090f1a;
+  --bg-subtle: #0f1628;
+  --section-tint: #111b2e;
+  --bg-deep: #050810;
+  --bg-navy: #0c1426;
+  --bg-navy-card: #121c32;
+  --surface: #141d2f;
+  --fg: #e8ecf4;
+  --fg-muted: #94a3b8;
+  --border: color-mix(in oklab, #94a3b8 16%, transparent);
+  --border-strong: color-mix(in oklab, #94a3b8 28%, transparent);
+  --accent: #7ab3ff;
+  --teal: #3dd4c4;
+  --teal-soft: color-mix(in oklab, var(--teal) 26%, transparent);
+  --accent-on-dark: #9ec9ff;
+  --fg-on-dark: #eef2fb;
+  --fg-on-dark-muted: #9aa6bc;
+  --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 18px 50px -36px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 28px 80px -44px rgba(0, 0, 0, 0.6);
+  --hero-bg-mix: #152032;
+  --noise-opacity: 0.06;
+  --noise-blend: overlay;
+  --grid-line-major: rgba(255, 255, 255, 0.055);
+  --grid-line-minor: rgba(255, 255, 255, 0.045);
+  --grid-dot: rgba(255, 255, 255, 0.07);
+  --hero-atmosphere-opacity: 0.4;
+  --shadow-header: 0 12px 48px -28px rgba(0, 0, 0, 0.55);
+  --shadow-hover-soft: 0 12px 40px -24px rgba(0, 0, 0, 0.45);
+  --preview-inset-highlight: rgba(255, 255, 255, 0.07);
+  --footer-divider: rgba(255, 255, 255, 0.08);
+  --link-underline-on-dark: rgba(255, 255, 255, 0.18);
+  --ring-on-accent: rgba(255, 255, 255, 0.12);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html {
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: var(--noise-opacity);
+  mix-blend-mode: var(--noise-blend);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 28%, var(--surface));
+  color: var(--fg);
+}
+
+.hero-atmosphere {
+  background-image:
+    linear-gradient(to right, var(--grid-line-major) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-minor) 1px, transparent 1px),
+    radial-gradient(circle at 1px 1px, var(--grid-dot) 1px, transparent 0);
+  background-size:
+    56px 56px,
+    56px 56px,
+    20px 20px;
+  mask-image: radial-gradient(80% 70% at 50% 0%, black 55%, transparent 100%);
+  opacity: var(--hero-atmosphere-opacity);
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-float-soft {
+  animation: float-soft 4.6s ease-in-out infinite;
+}
+
+@keyframes dash-shift {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.sparkline-animate {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: dash-shift 3.2s ease-in-out infinite alternate;
+}
+
+.fluid-hero-title {
+  font-size: clamp(1.3125rem, 0.28rem + 4.1vw, 2.625rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
