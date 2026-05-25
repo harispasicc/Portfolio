@@ -1,5 +1,15 @@
 import { FadeUp } from "@/components/motion/FadeUp";
-import { CONTENT, SECTION_X } from "@/lib/section";
+import { SectionAmbient } from "@/components/SectionAmbient";
+import { sectionDividerTop, sectionTone } from "@/lib/depth";
+import {
+  CONTENT,
+  GRID_SHOWCASE,
+  PROSE_BODY,
+  SECTION_LABEL,
+  SECTION_X,
+  SECTION_Y,
+} from "@/lib/section";
+import { FitBookWordmark } from "@/components/fitbook/FitBookBrand";
 import { fitbook } from "@/data/site";
 import { Badge } from "./Badge";
 import { FitBookActions, FitBookShowcase } from "./FitBookShowcase";
@@ -10,41 +20,66 @@ export function FitBookFeatured() {
     <FadeUp
       as="section"
       id="projects"
-      className={cn(
-        "border-b border-[var(--border)] bg-[var(--section-tint)]",
-        SECTION_X,
-        "py-16 min-[380px]:py-20 sm:py-24 lg:py-28 xl:py-32",
-      )}
+      className={cn(sectionTone.tint, SECTION_X, SECTION_Y, "overflow-x-clip")}
     >
+      <div className={sectionDividerTop} aria-hidden />
+      <SectionAmbient tone="tint" />
       <div className={CONTENT}>
-        <div className="flex min-w-0 flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
-          <div className="min-w-0 max-w-3xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
-              Featured product
-            </p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-[-0.02em] text-[var(--fg)] sm:text-3xl xl:text-[2.15rem] xl:leading-tight 2xl:text-[2.35rem]">
-              {fitbook.name}
+        <div className="flex min-w-0 flex-col gap-6 md:gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-10 xl:gap-12">
+          <div className="min-w-0 flex-1 lg:max-w-2xl">
+            <p className={SECTION_LABEL}>Featured product</p>
+            <h2 className="mt-2">
+              <FitBookWordmark className="text-xl sm:text-2xl md:text-[1.75rem]" />
+              <span className="sr-only">{fitbook.name}</span>
             </h2>
-            <p className="mt-3 max-w-2xl text-base leading-relaxed text-[var(--fg-muted)] sm:text-lg">
+            <p className="mt-2.5 text-sm leading-[1.65] text-[var(--fg-muted)] sm:text-[15px] md:text-base">
               {fitbook.tagline}
             </p>
           </div>
-          <div className="min-w-0 shrink-0 lg:max-w-[min(100%,28rem)]">
+          <div className="w-full min-w-0 sm:max-w-md lg:w-[14rem] lg:max-w-none lg:shrink-0 xl:w-[15rem]">
             <FitBookActions />
           </div>
         </div>
 
-        <p className="mt-10 max-w-3xl text-pretty text-sm leading-[1.72] text-[var(--fg-muted)] sm:text-[15px] sm:leading-relaxed lg:text-base">
+        <p
+          className={cn(
+            PROSE_BODY,
+            "mt-6 text-pretty text-sm leading-[1.65] text-[var(--fg-muted)] sm:text-[15px]",
+          )}
+        >
           {fitbook.short}
         </p>
 
-        <div className="mt-7 flex flex-wrap gap-2">
-          {fitbook.stack.map((tech) => (
+        <ul className="mt-5 grid min-w-0 gap-2 sm:grid-cols-2 lg:max-w-3xl">
+          {fitbook.highlights.map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-2.5 text-sm leading-[1.55] text-[var(--fg-muted)]"
+            >
+              <span
+                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--teal)]"
+                aria-hidden
+              />
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          {fitbook.stackPrimary.map((tech) => (
+            <Badge
+              key={tech}
+              className="border-[color-mix(in_oklab,var(--teal)_32%,var(--border-strong))] bg-[color-mix(in_oklab,var(--teal)_8%,var(--surface))] font-semibold text-[var(--fg)] shadow-[var(--shadow-sm)]"
+            >
+              {tech}
+            </Badge>
+          ))}
+          {fitbook.stackSecondary.map((tech) => (
             <Badge key={tech}>{tech}</Badge>
           ))}
         </div>
 
-        <FitBookShowcase />
+        <FitBookShowcase className={GRID_SHOWCASE} />
       </div>
     </FadeUp>
   );

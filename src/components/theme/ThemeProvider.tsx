@@ -19,7 +19,6 @@ import {
 
 type ThemeContextValue = {
   theme: ThemeMode;
-  setTheme: (mode: ThemeMode) => void;
   toggleTheme: () => void;
 };
 
@@ -45,18 +44,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     } catch {}
   }, [theme]);
 
-  const setTheme = useCallback((mode: ThemeMode) => {
-    setThemeState(mode === "dark" ? "dark" : "light");
-  }, []);
-
   const toggleTheme = useCallback(() => {
     setThemeState((t) => (t === "dark" ? "light" : "dark"));
   }, []);
 
-  const value = useMemo(
-    () => ({ theme, setTheme, toggleTheme }),
-    [theme, setTheme, toggleTheme],
-  );
+  const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme]);
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }

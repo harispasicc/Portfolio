@@ -8,7 +8,7 @@ export function SiteFooter() {
   return (
     <footer
       className={cn(
-        "border-t border-[color-mix(in_oklab,var(--footer-divider)_100%,transparent)] bg-[var(--bg-deep)] py-8 text-center text-sm text-[var(--fg-on-dark-muted)] sm:py-10",
+        "border-t border-[color-mix(in_oklab,var(--footer-divider)_100%,transparent)] bg-[var(--bg-deep)] py-8 pb-[max(2rem,env(safe-area-inset-bottom))] text-center text-sm text-[var(--fg-on-dark-muted)] sm:py-10",
         SECTION_X,
       )}
     >

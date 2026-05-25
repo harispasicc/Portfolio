@@ -40,7 +40,7 @@ export function ScrollToTop() {
       href="#top"
       onClick={goTop}
       className={cn(
-        "fixed bottom-5 right-5 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[color-mix(in_oklab,var(--surface)_92%,transparent)] text-[var(--fg)] shadow-[var(--shadow-md)] backdrop-blur-md transition-[opacity,transform,box-shadow,border-color,background-color] duration-300 hover:border-[var(--border-strong)] hover:shadow-[var(--shadow-lg)] active:scale-[0.96]",
+        "fixed z-40 flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[color-mix(in_oklab,var(--surface)_92%,transparent)] text-[var(--fg)] shadow-[var(--shadow-md)] backdrop-blur-md transition-[opacity,transform,box-shadow,border-color,background-color] duration-300 hover:border-[var(--border-strong)] hover:shadow-[var(--shadow-lg)] active:scale-[0.96] bottom-[max(1.25rem,env(safe-area-inset-bottom))] right-[max(1.25rem,env(safe-area-inset-right))] sm:bottom-6 sm:right-6",
         visible ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0",
       )}
       aria-label="Back to top"

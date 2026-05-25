@@ -2,98 +2,64 @@
 
 import { motion } from "framer-motion";
 import { FadeUp } from "@/components/motion/FadeUp";
-import { CONTENT, SECTION_X } from "@/lib/section";
-import { skills } from "@/data/site";
+import { SectionAmbient } from "@/components/SectionAmbient";
+import { sectionTone } from "@/lib/depth";
+import { surfaceCardDark } from "@/lib/interaction";
+import { fadeUpItem, staggerContainer } from "@/lib/motion";
+import {
+  CONTENT,
+  GRID_SKILLS,
+  SECTION_DESC_DARK,
+  SECTION_TITLE_DARK,
+  SECTION_X,
+  SECTION_Y,
+} from "@/lib/section";
+import { skillGroups } from "@/data/site";
 import { cn } from "@/lib/cn";
-
-const groups: { title: string; items: readonly string[] }[] = [
-  { title: "Frontend", items: skills.frontend },
-  { title: "Styling & UI systems", items: skills.styling },
-  { title: "Backend & APIs", items: skills.backend },
-  { title: "Testing", items: skills.testing },
-  { title: "Workflow & design", items: skills.workflow },
-  { title: "Platform & observability", items: skills.platform },
-];
-
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.07 } },
-};
-
-const row = {
-  hidden: { opacity: 0, y: 16 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
 
 export function SkillsSection() {
   return (
     <FadeUp
       as="section"
       id="skills"
-      className={cn(
-        "relative overflow-hidden border-b border-white/10 bg-[var(--bg-navy)] text-[var(--fg-on-dark)]",
-        SECTION_X,
-        "py-16 min-[380px]:py-20 sm:py-24 lg:py-28",
-      )}
+      className={cn(sectionTone.dark, SECTION_X, SECTION_Y, "overflow-x-clip")}
     >
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_55%_at_80%_0%,color-mix(in_oklab,var(--teal)_10%,transparent),transparent)]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-          maskImage: "radial-gradient(70% 60% at 50% 0%, black 35%, transparent 100%)",
-        }}
-        aria-hidden
-      />
-
+      <SectionAmbient tone="dark" />
       <div className={cn("relative", CONTENT)}>
-        <h2 className="text-2xl font-semibold tracking-[-0.02em] sm:text-3xl">Skills</h2>
-        <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[var(--fg-on-dark-muted)] sm:text-base">
-          Stack and tooling from production web, research platforms, and healthcare products—grouped for clarity, not buzzwords.
+        <h2 className={SECTION_TITLE_DARK}>Skills</h2>
+        <p className={SECTION_DESC_DARK}>
+          Core stack for production React/TypeScript products, grouped by how I work on real teams.
         </p>
 
         <motion.div
-          className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className={GRID_SKILLS}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-70px" }}
-          variants={container}
+          variants={staggerContainer}
         >
-          {groups.map((group) => (
+          {skillGroups.map((group) => (
             <motion.div
               key={group.title}
-              variants={row}
-              whileHover={{ y: -4 }}
-              transition={{ type: "spring", stiffness: 380, damping: 28 }}
-              className={cn(
-                "rounded-2xl border border-white/10 bg-[color-mix(in_oklab,var(--bg-navy-card)_92%,black)] p-5 shadow-[0_24px_80px_-52px_rgba(0,0,0,0.75)] backdrop-blur-sm",
-                "transition-[border-color,box-shadow,transform] duration-300 hover:border-[color-mix(in_oklab,var(--teal)_35%,white)]",
-                "hover:shadow-[0_0_0_1px_color-mix(in_oklab,var(--teal)_28%,transparent),0_26px_70px_-40px_color-mix(in_oklab,var(--teal)_14%,black)]",
-              )}
+              variants={fadeUpItem}
+              className={cn(surfaceCardDark, "p-4 sm:p-5")}
             >
-              <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--fg-on-dark-muted)]">
+              <h3 className="text-sm font-semibold tracking-tight text-[var(--fg-on-dark)]">
                 {group.title}
               </h3>
-              <div className="mt-4 flex flex-wrap gap-2">
+              <p className="mt-1 text-[12px] text-[var(--fg-on-dark-muted)]">{group.subtitle}</p>
+              <div className="mt-3.5 flex flex-wrap gap-1.5">
                 {group.items.map((item) => (
                   <span
-                    key={item}
+                    key={item.label}
                     className={cn(
-                      "rounded-full border border-white/12 bg-white/[0.04] px-2.5 py-1 text-[11px] font-medium text-[var(--fg-on-dark)]",
-                      "shadow-[0_0_0_1px_rgba(255,255,255,0.02)] transition-[border-color,box-shadow,color,transform] duration-200",
-                      "hover:-translate-y-0.5 hover:border-[color-mix(in_oklab,var(--teal)_40%,white)] hover:text-[color-mix(in_oklab,var(--teal)_70%,white)]",
+                      "rounded-md border px-2.5 py-0.5 text-[11px] font-medium",
+                      item.emphasis
+                        ? "border-[color-mix(in_oklab,var(--teal)_32%,white)] bg-[color-mix(in_oklab,var(--teal)_10%,transparent)] text-[var(--fg-on-dark)]"
+                        : "border-white/10 bg-white/[0.03] text-[var(--fg-on-dark-muted)]",
                     )}
                   >
-                    {item}
+                    {item.label}
                   </span>
                 ))}
               </div>

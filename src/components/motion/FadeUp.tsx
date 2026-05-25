@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type HTMLMotionProps } from "framer-motion";
+import { EASE_PREMIUM } from "@/lib/motion";
 
 type As = "div" | "section";
 
@@ -14,7 +15,7 @@ export function FadeUp({
   children,
   className,
   delay = 0,
-  y = 22,
+  y = 16,
   as = "div",
   ...rest
 }: FadeUpProps) {
@@ -25,11 +26,11 @@ export function FadeUp({
       className={className}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-72px", amount: 0.15 }}
+      viewport={{ once: true, margin: "-64px", amount: 0.12 }}
       transition={{
-        duration: 0.52,
+        duration: 0.5,
         delay,
-        ease: [0.22, 1, 0.36, 1] as const,
+        ease: EASE_PREMIUM,
       }}
       {...rest}
     >

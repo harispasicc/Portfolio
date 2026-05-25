@@ -1,5 +1,13 @@
 import { FadeUp } from "@/components/motion/FadeUp";
-import { CONTENT, SECTION_X } from "@/lib/section";
+import { SectionAmbient } from "@/components/SectionAmbient";
+import { sectionDividerTop, sectionTone } from "@/lib/depth";
+import {
+  CONTENT,
+  PROSE_BODY,
+  SECTION_TITLE,
+  SECTION_X,
+  SECTION_Y,
+} from "@/lib/section";
 import { about } from "@/data/site";
 import { cn } from "@/lib/cn";
 
@@ -8,21 +16,32 @@ export function AboutSection() {
     <FadeUp
       as="section"
       id="about"
-      className={cn(
-        "border-b border-[var(--border)] bg-[var(--section-tint)]",
-        SECTION_X,
-        "py-16 min-[380px]:py-20 sm:py-24 lg:py-28",
-      )}
+      className={cn(sectionTone.mist, SECTION_X, SECTION_Y, "overflow-x-clip")}
     >
+      <div className={sectionDividerTop} aria-hidden />
+      <SectionAmbient tone="mist" />
       <div className={CONTENT}>
-        <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[var(--fg)] sm:text-3xl xl:text-[2rem]">
-          About
-        </h2>
-        <div className="mt-8 max-w-2xl space-y-5 text-pretty text-sm leading-relaxed text-[var(--fg-muted)] sm:text-base sm:leading-relaxed lg:text-[17px] lg:leading-[1.72]">
+        <h2 className={SECTION_TITLE}>About</h2>
+        <div
+          className={cn(
+            PROSE_BODY,
+            "mt-5 space-y-4 text-pretty text-sm leading-[1.65] text-[var(--fg-muted)] sm:text-[15px]",
+          )}
+        >
           {about.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
         </div>
+        <ul className="mt-6 flex flex-wrap gap-2">
+          {about.strengths.map((label) => (
+            <li
+              key={label}
+              className="rounded-full border border-[color-mix(in_oklab,var(--border-strong)_35%,var(--border))] bg-[var(--surface)] px-2.5 py-1 text-xs font-medium text-[var(--fg)] shadow-[var(--shadow-sm)]"
+            >
+              {label}
+            </li>
+          ))}
+        </ul>
       </div>
     </FadeUp>
   );

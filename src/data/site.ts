@@ -8,12 +8,10 @@ export const links = {
   github: "https://github.com/harispasicc?tab=repositories",
   linkedin: "https://www.linkedin.com/in/haris-pa%C5%A1i%C4%87-386408171/",
   email: "mailto:harispasic63@gmail.com",
-  fitbookLive: "https://fitbook.ai",
-  fitbookRepo: "https://github.com/harispasic/fitbook-ai",
-  projectTwoLive: "#",
-  projectTwoRepo: "#",
-  projectThreeLive: "#",
-  projectThreeRepo: "#",
+  fitbookLive: "https://fitbook-ai-e2gi.vercel.app/",
+  fitbookClientDemo: "https://fitbook-ai-e2gi.vercel.app/login?demo=1",
+  fitbookCoachDemo: "https://fitbook-ai-e2gi.vercel.app/trainer/login?demo=1",
+  fitbookRepo: "https://github.com/harispasicc/FitbookAI",
 } as const;
 
 export const contact = {
@@ -25,10 +23,8 @@ export const contact = {
 
 export const heroCredibility = [
   "5+ years in production",
-  "React · TypeScript · Next.js",
-  "Sarajevo, BiH · CET",
-  "Healthcare & research platforms",
-  "Mentoring & code quality",
+  "Healthcare & research SaaS",
+  "Sarajevo · CET",
 ] as const;
 
 export const hero = {
@@ -40,9 +36,22 @@ export const hero = {
 
 export const about = {
   paragraphs: [
-    "Frontend-focused software engineer with over 5 years of experience building reliable, scalable web applications used in real-world production environments.",
-    "I primarily work with React and TypeScript, focusing on clean architecture, performance, and well-tested code. I have led frontend development on multiple projects, collaborated closely with designers and backend teams, and enjoy mentoring engineers to build maintainable, user-focused products.",
+    "I build frontend for products that need to ship, not slide decks. Over five years I've owned React and TypeScript surfaces in healthcare and market research, with a focus on architecture, testing, performance, and calm product UX.",
+    "I recently shipped FitBook AI, a full-stack coaching SaaS MVP end to end. I care about maintainable components, clear API boundaries, and interfaces that feel production-ready from the first release.",
   ],
+  strengths: [
+    "Product-minded UI",
+    "Frontend architecture",
+    "Testing & quality",
+    "SaaS delivery",
+  ],
+} as const;
+
+export const contactCopy = {
+  eyebrow: "Contact",
+  title:
+    "Senior frontend engineer focused on architecture, performance, testing, and maintainable product systems.",
+  timezone: "CET · Sarajevo",
 } as const;
 
 export const experience = [
@@ -52,10 +61,9 @@ export const experience = [
     title: "Lead Frontend Engineer (Project-based)",
     period: "Oct 2024 — Oct 2025",
     highlights: [
-      "Led frontend development of a production healthcare platform, owning architecture, scalability, and overall code quality.",
-      "Built and maintained complex React features with TypeScript and Redux Toolkit (RTK Query), using a component-driven, performance-focused approach.",
-      "Established end-to-end testing with Cypress, improving stability and confidence in releases.",
-      "Mentored frontend engineers, led code reviews, and partnered with backend and product to ship maintainable, well-aligned features.",
+      "Owned frontend architecture and delivery on a production healthcare platform.",
+      "Shipped complex React/TypeScript features with RTK Query; introduced Cypress E2E in the release flow.",
+      "Mentored engineers, led reviews, and aligned delivery with product and backend.",
     ],
   },
   {
@@ -64,10 +72,8 @@ export const experience = [
     title: "Software Engineer",
     period: "Oct 2022 — Present",
     highlights: [
-      "Worked on data-driven and market research platforms across data collection, analysis, and frontend feature development.",
-      "Led frontend initiatives independently, improving UX and performance across multiple projects.",
-      "Built and maintained React and TypeScript applications with Redux / Redux Toolkit and REST API integration.",
-      "Implemented end-to-end and unit testing with Playwright, TestCafe, and Jest to reduce regressions and improve reliability.",
+      "Led frontend work on data-driven research products—UX, performance, and feature ownership.",
+      "Built React/TypeScript apps with Redux and REST APIs; Playwright and Jest for regression safety.",
     ],
   },
   {
@@ -76,10 +82,8 @@ export const experience = [
     title: "Software Engineer",
     period: "Feb 2020 — Mar 2022",
     highlights: [
-      "Collaborated with distributed teams on internal dashboards, e-commerce sites, and client portals.",
-      "Delivered React features, performance improvements, and UI fixes to raise overall user experience.",
-      "Built reusable components and managed global state with Redux for consistency and long-term maintainability.",
-      "Improved responsive layouts and contributed to React Native prototypes for mobile apps.",
+      "Delivered dashboards, e-commerce, and client portals with React and reusable component systems.",
+      "Improved performance, responsive layouts, and Redux-based state for long-term maintainability.",
     ],
   },
   {
@@ -88,9 +92,7 @@ export const experience = [
     title: "Frontend Developer",
     period: "Jun 2019 — Jan 2020",
     highlights: [
-      "Developed e-commerce and single-page experiences with Shopify and React for SMBs across Bosnia and Herzegovina.",
-      "Delivered tailored solutions across industries, aligning with brand, business goals, and user needs.",
-      "Worked directly with clients and senior developers on requirements, UI/UX best practices, and performance optimization.",
+      "Built Shopify and React storefronts for SMBs requirements, UI polish, and performance.",
     ],
   },
 ] as const;
@@ -108,150 +110,172 @@ export const education = [
     degree: "Full-stack intensive program",
     period: "Mar 2022",
     highlights: [
-      "40+ practical projects across modern frontend and backend, including React, Node.js, MongoDB, and testing fundamentals.",
-      "Built real-world apps such as e-commerce and social-style products across the full development lifecycle.",
+      "Intensive full-stack track: React, Node.js, MongoDB, and testing across 40+ hands-on projects.",
     ],
   },
 ] as const;
 
-export const skills = {
-  frontend: [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "Next.js",
-    "React Native",
-    "Redux",
-    "AI integrations",
-  ],
-  styling: ["Tailwind", "CSS", "SCSS", "styled-components", "Storybook"],
-  backend: ["Node.js", "Express", "MongoDB", "SQL", "GraphQL"],
-  testing: ["Jest", "Playwright", "TestCafe", "Cypress"],
-  workflow: ["Git", "Jira", "Figma"],
-  platform: ["Docker", "Grafana", "Loki", "CI/CD"],
-} as const;
+export const skillGroups: readonly {
+  title: string;
+  subtitle: string;
+  items: readonly { label: string; emphasis?: boolean }[];
+}[] = [
+  {
+    title: "Frontend",
+    subtitle: "React, TypeScript, Next.js production SaaS UI",
+    items: [
+      { label: "React", emphasis: true },
+      { label: "TypeScript", emphasis: true },
+      { label: "Next.js", emphasis: true },
+      { label: "Performance", emphasis: true },
+      { label: "Redux" },
+      { label: "React Native" },
+      { label: "Accessibility" },
+    ],
+  },
+  {
+    title: "Quality & APIs",
+    subtitle: "Testing in CI, REST and GraphQL integration",
+    items: [
+      { label: "Playwright", emphasis: true },
+      { label: "Jest", emphasis: true },
+      { label: "REST APIs", emphasis: true },
+      { label: "Cypress" },
+      { label: "GraphQL" },
+      { label: "TestCafe" },
+    ],
+  },
+  {
+    title: "Styling & systems",
+    subtitle: "Tailwind, components, Storybook, design tokens",
+    items: [
+      { label: "Tailwind", emphasis: true },
+      { label: "Storybook", emphasis: true },
+      { label: "CSS" },
+      { label: "SCSS" },
+      { label: "Figma" },
+    ],
+  },
+  {
+    title: "Platform",
+    subtitle: "Node, data layer, CI/CD when the product needs it",
+    items: [
+      { label: "Node.js", emphasis: true },
+      { label: "PostgreSQL" },
+      { label: "CI/CD", emphasis: true },
+      { label: "Docker" },
+      { label: "SQL" },
+      { label: "Git" },
+    ],
+  },
+] as const;
 
 export const saasProductArchitecture = [
   {
     title: "Role-based authentication",
-    blurb: "Org-aware sessions, protected routes, and least-privilege defaults across coach and client surfaces.",
+    blurb:
+      "Separate App Router layouts for client (/me) and coach (/dashboard), with **JWT httpOnly sessions** and route guards.",
   },
   {
     title: "Booking engine",
-    blurb: "Availability rules, conflict checks, reminders, and calendar sync designed for real-world scheduling load.",
+    blurb:
+      "Full lifecycle from open slots through confirm, reschedule, and complete, with **concurrency checks** and a shared BookingsProvider.",
   },
   {
     title: "AI workflows",
-    blurb: "Guard-railed prompts, structured outputs, and review steps so AI assists coaches without risking trust.",
+    blurb:
+      "Optional, **lazy-loaded assistant** with booking aware tools and coach side drafting when OpenAI is configured.",
   },
   {
     title: "Client portal",
-    blurb: "Self-serve progress, messaging, and plan visibility with responsive layouts for mobile-first clients.",
+    blurb:
+      "Session booking, goals, workout history, notifications, and **post-session reviews** on live data.",
   },
   {
     title: "Trainer CRM",
-    blurb: "Pipeline views, notes, tags, and follow-ups so coaches can run a practice—not just a calendar.",
+    blurb:
+      "Client notes, services, availability, and calendar in one coach workspace, not scattered spreadsheets.",
   },
   {
     title: "Analytics dashboard",
-    blurb: "Operational metrics, cohort signals, and export-friendly reporting for retention and growth decisions.",
+    blurb:
+      "Dashboard KPIs tied to **real bookings**; plan tiers (Free / Pro / AI Pro) enforced in the UI.",
   },
   {
     title: "Responsive architecture",
-    blurb: "Composable UI boundaries, lazy boundaries where it matters, and predictable state for fast iteration.",
+    blurb:
+      "Shared **EmptyState**, ModalShell, and product tokens across marketing, client, and coach surfaces.",
   },
   {
     title: "API / backend-ready structure",
-    blurb: "Typed contracts, service layers, and clear separation so the UI scales with evolving APIs and data models.",
+    blurb:
+      "Thin app/api routes delegating to server modules with **Zod validation** and Prisma-backed persistence.",
   },
 ] as const;
 
 export const fitbook = {
   name: "FitBook AI",
-  tagline: "AI-powered coaching marketplace & trainer OS",
+  tagline: "Production-oriented full-stack coaching SaaS",
   short:
-    "A full-stack SaaS product connecting clients with fitness coaches, including booking, coach dashboard, client portal, CRM, analytics, and AI assistant tools.",
-  stack: [
-    "Next.js",
+    "Full-stack coaching MVP with real PostgreSQL data—role-based client and coach dashboards, a full booking lifecycle, JWT auth, and Playwright E2E coverage. Optional AI and email when configured.",
+  highlights: [
+    "Role-based /me and /dashboard workspaces",
+    "PostgreSQL + Prisma persistence",
+    "Booking lifecycle with concurrency checks",
+    "JWT httpOnly sessions & route guards",
+    "Playwright E2E (auth, bookings, reviews)",
+    "Optional AI workflows & Resend email",
+  ],
+  stackPrimary: [
+    "Next.js 16",
+    "React 19",
     "TypeScript",
     "PostgreSQL",
     "Prisma",
-    "Tailwind",
-    "styled-components",
-    "CSS",
-    "SCSS",
-    "GraphQL",
-    "REST",
-    "OpenAI",
-    "AI integrations",
-    "Storybook",
-    "Auth",
-    "Vercel",
+    "Playwright",
   ],
+  stackSecondary: ["Tailwind CSS 4", "Radix UI", "Zod", "JWT", "OpenAI", "Resend", "Vercel"],
   problem:
-    "Coaches manage bookings, clients, reminders and progress through scattered tools.",
+    "Coaches and clients juggle discovery, booking, CRM, and progress across tools, with no shared source of truth.",
   solution:
-    "FitBook AI centralizes booking, client management, progress tracking, and AI-powered coaching workflows.",
+    "One product: marketplace, client and coach dashboards, booking lifecycle, CRM, notifications, and reviews on live PostgreSQL data.",
   features: [
-    "Marketplace",
-    "Booking flow",
-    "Trainer dashboard",
-    "Client portal",
-    "AI assistant",
-    "Analytics",
-    "Role-based auth",
+    "Coach directory & availability",
+    "Book → confirm → complete flow",
+    "Client goals, sessions, reviews",
+    "Coach CRM, calendar, services",
+    "In-app notifications",
+    "Optional AI & email",
   ],
   built: [
-    "UI architecture",
-    "Reusable components",
-    "Protected routes",
-    "Data model",
-    "Backend/API integration",
-    "Responsive UX",
+    "App Router layouts & role guards",
+    "Prisma schema, migrations, seed",
+    "BookingsProvider + thin API (Zod)",
+    "JWT sessions & password reset",
+    "Lazy-loaded AI panel",
+    "Shared UI primitives",
   ],
 } as const;
 
-export const secondaryProjects = [
+export const nextProjects = [
   {
     slug: "ops-console",
     name: "Operations console",
-    tagline: "Internal SaaS for fulfillment and support teams",
+    tagline: "Internal SaaS for fulfillment and support",
     summary:
-      "Role-aware console for queues, SLAs, and audit trails with fast tables and keyboard-first workflows.",
-    stack: [
-      "React",
-      "TypeScript",
-      "Tailwind",
-      "CSS",
-      "styled-components",
-      "TanStack Query",
-      "REST",
-      "GraphQL",
-      "Storybook",
-    ],
+      "Planned: role-aware queues, SLAs, and audit trails with fast tables and keyboard-first workflows.",
+    stack: ["React", "TypeScript", "Tailwind", "TanStack Query", "REST"],
     image: "/images/project-ops.svg",
-    live: links.projectTwoLive,
-    repo: links.projectTwoRepo,
+    status: "Planned" as const,
   },
   {
     slug: "insights-hub",
     name: "Insights hub",
-    tagline: "Self-serve analytics for product-led growth",
+    tagline: "Self-serve analytics for product teams",
     summary:
-      "Composable dashboards with saved views, exports, and guardrails so non-technical teams can explore safely.",
-    stack: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind",
-      "SCSS",
-      "Charts",
-      "RBAC",
-      "GraphQL",
-      "AI integrations",
-      "Storybook",
-    ],
+      "Planned: composable dashboards, saved views, and guardrails for safe self-serve exploration.",
+    stack: ["Next.js", "TypeScript", "Tailwind", "Charts", "RBAC"],
     image: "/images/project-insights.svg",
-    live: links.projectThreeLive,
-    repo: links.projectThreeRepo,
+    status: "Planned" as const,
   },
 ] as const;

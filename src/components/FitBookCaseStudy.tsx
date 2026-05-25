@@ -1,31 +1,69 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FadeUp } from "@/components/motion/FadeUp";
-import { CONTENT, SECTION_X } from "@/lib/section";
+import { SectionAmbient } from "@/components/SectionAmbient";
+import { sectionDividerTop, sectionTone } from "@/lib/depth";
+import { surfaceCardRaised } from "@/lib/interaction";
+import { fadeUpItem, staggerContainer } from "@/lib/motion";
+import {
+  CONTENT,
+  GRID_CASE_STUDY,
+  SECTION_LABEL,
+  SECTION_TITLE,
+  SECTION_X,
+  SECTION_Y,
+} from "@/lib/section";
 import { fitbook } from "@/data/site";
 import { cn } from "@/lib/cn";
 
 function Block({
   title,
   children,
-  className,
+  emphasized = false,
 }: {
   title: string;
   children: React.ReactNode;
-  className?: string;
+  emphasized?: boolean;
 }) {
   return (
-    <div
+    <motion.div
+      variants={fadeUpItem}
       className={cn(
-        "rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-sm)] ring-1 ring-black/[0.02] transition-[box-shadow,border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-[color-mix(in_oklab,var(--border-strong)_65%,var(--border))] hover:shadow-[var(--shadow-md)] sm:p-8",
-        className,
+        surfaceCardRaised,
+        "group p-5 hover:-translate-y-0.5 sm:p-6",
+        emphasized && "border-[color-mix(in_oklab,var(--teal)_18%,var(--border))]",
       )}
     >
-      <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--fg-muted)]">
-        {title}
-      </h3>
-      <div className="mt-3 text-[15px] leading-[1.72] text-[var(--fg)] sm:text-base sm:leading-relaxed">
+      <div className="flex items-center gap-2.5 border-b border-[color-mix(in_oklab,var(--border-strong)_35%,var(--border))] pb-3.5">
+        <span
+          className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--teal)] shadow-[0_0_8px_color-mix(in_oklab,var(--teal)_50%,transparent)]"
+          aria-hidden
+        />
+        <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+          {title}
+        </h3>
+      </div>
+      <div className="mt-4 text-sm leading-[1.65] text-[var(--fg-muted)] sm:text-[15px]">
         {children}
       </div>
-    </div>
+    </motion.div>
+  );
+}
+
+function BulletList({ items }: { items: readonly string[] }) {
+  return (
+    <ul className="space-y-2.5">
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-2.5">
+          <span
+            className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--teal)]"
+            aria-hidden
+          />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -34,59 +72,38 @@ export function FitBookCaseStudy() {
     <FadeUp
       as="section"
       id="fitbook-case-study"
-      className={cn(
-        "border-b border-[var(--border)] bg-[var(--bg)]",
-        SECTION_X,
-        "py-16 min-[380px]:py-20 sm:py-24 lg:py-28",
-      )}
+      className={cn(sectionTone.raised, SECTION_X, SECTION_Y, "overflow-x-clip")}
     >
+      <div className={sectionDividerTop} aria-hidden />
+      <SectionAmbient tone="raised" />
       <div className={CONTENT}>
         <div className="max-w-2xl">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
-            Case study
-          </p>
-          <h2 className="mt-2 text-2xl font-semibold tracking-[-0.02em] text-[var(--fg)] sm:text-3xl">
-            How FitBook AI removes operational drag for coaches
+          <p className={SECTION_LABEL}>Case study</p>
+          <h2 className={cn("mt-2", SECTION_TITLE)}>
+            How FitBook AI ships a real coaching MVP
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          <Block title="Problem">
-            <p className="text-[var(--fg-muted)]">{fitbook.problem}</p>
+        <motion.div
+          className={GRID_CASE_STUDY}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={staggerContainer}
+        >
+          <Block title="Problem" emphasized>
+            <p>{fitbook.problem}</p>
           </Block>
-          <Block title="Solution">
-            <p className="text-[var(--fg-muted)]">{fitbook.solution}</p>
+          <Block title="Solution" emphasized>
+            <p>{fitbook.solution}</p>
           </Block>
-        </div>
-
-        <div className="mt-6 grid gap-6 lg:grid-cols-2">
-          <Block title="Features">
-            <ul className="grid gap-2 sm:grid-cols-2">
-              {fitbook.features.map((item) => (
-                <li key={item} className="flex items-center gap-2 text-[var(--fg-muted)]">
-                  <span
-                    className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]"
-                    aria-hidden
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
+          <Block title="Core features">
+            <BulletList items={fitbook.features} />
           </Block>
           <Block title="What I built">
-            <ul className="grid gap-2">
-              {fitbook.built.map((item) => (
-                <li key={item} className="flex items-center gap-2 text-[var(--fg-muted)]">
-                  <span
-                    className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]"
-                    aria-hidden
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <BulletList items={fitbook.built} />
           </Block>
-        </div>
+        </motion.div>
       </div>
     </FadeUp>
   );

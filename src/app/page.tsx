@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main className="min-w-0 overflow-x-clip">
         <Hero />
         <FitBookFeatured />
         <FitBookCaseStudy />
