@@ -60,7 +60,7 @@ function FitBookScreenshot({
         className="block outline-offset-4"
       >
         <div className={productCardOuter}>
-          <BrowserChrome domain={domain} tone="light">
+          <BrowserChrome domain={domain}>
             <div className="overflow-hidden">
               <Image
                 src={src}

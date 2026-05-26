@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn";
 
-export const sectionShell = "relative overflow-hidden";
+const sectionShell = "relative overflow-hidden";
 
 export const sectionDividerTop =
   "pointer-events-none absolute inset-x-0 top-0 z-[1] h-px bg-gradient-to-r from-transparent via-[color-mix(in_oklab,var(--border-strong)_55%,var(--border))] to-transparent";

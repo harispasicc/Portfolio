@@ -89,7 +89,7 @@ export function HeroProductPreview() {
           rel="noreferrer"
           className="group block min-w-0 overflow-hidden rounded-lg ring-1 ring-black/[0.06] transition-[ring-color] duration-300 hover:ring-[color-mix(in_oklab,var(--teal)_25%,var(--border))] sm:rounded-xl"
         >
-          <BrowserChrome domain="fitbook-ai-e2gi.vercel.app/dashboard" tone="light">
+          <BrowserChrome domain="fitbook-ai-e2gi.vercel.app/dashboard">
             <div className="overflow-hidden bg-white">
               <Image
                 src="/images/fitbook-coach-dashboard.png"

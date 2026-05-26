@@ -1,4 +1,3 @@
-import { cn } from "@/lib/cn";
 import type { SectionTone } from "@/lib/depth";
 
 type SectionAmbientProps = {
