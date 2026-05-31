@@ -2,7 +2,7 @@
 
 Personal portfolio for **Haris Pašić**, frontend-focused software engineer. Showcases shipped products, technical case studies, experience, and contact details in a performance-focused, responsive single-page site.
 
-**Production:** [portfolio-mauve-nu-57.vercel.app](https://portfolio-mauve-nu-57.vercel.app/)
+**Production:** [www.harispasic.com](https://www.harispasic.com/)
 
 ---
 
@@ -136,7 +136,7 @@ The workflow in `.github/workflows/ci.yml` runs on every push and pull request t
 
 ## Deployment
 
-**Production:** [https://portfolio-mauve-nu-57.vercel.app/](https://portfolio-mauve-nu-57.vercel.app/)
+**Production:** [https://www.harispasic.com/](https://www.harispasic.com/)
 
 Hosted on Vercel. Pushes to `main` trigger automatic deployments after CI passes.
 

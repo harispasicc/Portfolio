@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-mauve-nu-57.vercel.app"),
+  metadataBase: new URL("https://www.harispasic.com"),
   title: "Haris Pašić — Frontend Software Engineer",
   description:
     "Frontend engineer building scalable React, TypeScript and AI-powered SaaS products.",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description:
       "Production-focused web applications with clean architecture, performance, and strong product UX.",
     type: "website",
-    url: "https://portfolio-mauve-nu-57.vercel.app/",
+    url: "https://www.harispasic.com/",
   },
 };
 
