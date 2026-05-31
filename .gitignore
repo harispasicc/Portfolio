@@ -32,3 +32,9 @@ yarn-error.log*
 
 *.tsbuildinfo
 next-env.d.ts
+
+.cursor/
+.cursorignore
+.cursorrules
+AGENTS.md
+.github/copilot-instructions.md

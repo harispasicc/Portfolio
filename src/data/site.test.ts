@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 import {
   experience,
   links,
-  nextProjects,
   person,
   skillGroups,
+  urbankey,
 } from "./site";
 
 describe("site data", () => {
@@ -19,6 +19,8 @@ describe("site data", () => {
     expect(links.email).toMatch(/^mailto:/);
     expect(links.fitbookLive).toMatch(/^https:\/\//);
     expect(links.fitbookRepo).toMatch(/^https:\/\//);
+    expect(urbankey.live).toMatch(/^https:\/\//);
+    expect(urbankey.repo).toBe(links.urbankeyRepo);
   });
 
   it("keeps non-empty content sections", () => {
@@ -29,9 +31,10 @@ describe("site data", () => {
     });
   });
 
-  it("references local project images", () => {
-    nextProjects.forEach((project) => {
-      expect(project.image).toMatch(/^\/images\//);
+  it("references local UrbanKey project images", () => {
+    expect(urbankey.logo).toMatch(/^\/images\//);
+    urbankey.screenshots.forEach((shot) => {
+      expect(shot.src).toMatch(/^\/images\//);
     });
   });
 });

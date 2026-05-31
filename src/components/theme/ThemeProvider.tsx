@@ -5,7 +5,6 @@ import {
   useCallback,
   useContext,
   useEffect,
-  useLayoutEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -31,11 +30,9 @@ function normalizeStored(): ThemeMode {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<ThemeMode>("light");
-
-  useLayoutEffect(() => {
-    setThemeState(normalizeStored());
-  }, []);
+  const [theme, setThemeState] = useState<ThemeMode>(() =>
+    typeof window === "undefined" ? "light" : normalizeStored(),
+  );
 
   useEffect(() => {
     applyThemeClass(theme);

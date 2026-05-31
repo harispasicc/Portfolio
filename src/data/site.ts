@@ -12,6 +12,7 @@ export const links = {
   fitbookClientDemo: "https://fitbook-ai-e2gi.vercel.app/login?demo=1",
   fitbookCoachDemo: "https://fitbook-ai-e2gi.vercel.app/trainer/login?demo=1",
   fitbookRepo: "https://github.com/harispasicc/FitbookAI",
+  urbankeyRepo: "https://github.com/harispasicc/urbankey-platform",
 } as const;
 
 export const contact = {
@@ -257,25 +258,92 @@ export const fitbook = {
   ],
 } as const;
 
-export const nextProjects = [
-  {
-    slug: "ops-console",
-    name: "Operations console",
-    tagline: "Internal SaaS for fulfillment and support",
-    summary:
-      "Planned: role-aware queues, SLAs, and audit trails with fast tables and keyboard-first workflows.",
-    stack: ["React", "TypeScript", "Tailwind", "TanStack Query", "REST"],
-    image: "/images/project-ops.svg",
-    status: "Planned" as const,
+export const urbankey = {
+  name: "UrbanKey Sarajevo",
+  live: "https://www.urbankey.ba/",
+  logo: "/images/urbankey-logo.png",
+  repo: "https://github.com/harispasicc/urbankey-platform",
+  tagline: "Production-ready property management platform",
+  problem:
+    "Apartment owners in Sarajevo need a credible way to present Airbnb and Booking management services online, with bilingual copy, trust signals, and a consultation path, without building a custom backend on day one.",
+  solution:
+    "A static-first Next.js marketing platform with typed EN/BS i18n, SEO and JSON-LD baked in, Formspree lead capture, and a CI gate (lint, unit, build, Playwright) before every production deploy to Vercel.",
+  built: [
+    "Section-based landing page (hero, services, process, FAQ, contact)",
+    "Custom bilingual i18n with persisted locale preference",
+    "Metadata, Open Graph, sitemap, robots, and FAQ structured data",
+    "Validated consultation form via Formspree",
+    "Vitest + Testing Library unit coverage",
+    "Playwright E2E specs for critical user flows",
+    "GitHub Actions pipeline on every push and PR to main",
+    "Production deploy on Vercel with custom domain www.urbankey.ba",
+  ],
+  ciPipeline: [
+    "Install dependencies (npm ci)",
+    "Lint (ESLint)",
+    "Unit tests (Vitest)",
+    "Production build",
+    "Playwright browser setup",
+    "End-to-end tests",
+  ],
+  roadmap: {
+    intro:
+      "The next phase of UrbanKey focuses on evolving the platform beyond marketing into an operational management system for short-term rental properties.",
+    plannedFeatures: [
+      "Property and owner management",
+      "Lead and client CRM",
+      "Task and operations management",
+      "Cleaning and maintenance scheduling",
+      "Revenue and occupancy reporting",
+      "Authentication and role-based access",
+      "Backend API and database infrastructure",
+    ],
+    vision:
+      "Long-term, UrbanKey aims to become the central operational platform used by the UrbanKey team and property owners to manage apartment operations efficiently, while continuing to leverage Airbnb and Booking.com as booking channels.",
   },
-  {
-    slug: "insights-hub",
-    name: "Insights hub",
-    tagline: "Self-serve analytics for product teams",
-    summary:
-      "Planned: composable dashboards, saved views, and guardrails for safe self-serve exploration.",
-    stack: ["Next.js", "TypeScript", "Tailwind", "Charts", "RBAC"],
-    image: "/images/project-insights.svg",
-    status: "Planned" as const,
-  },
-] as const;
+  description: [
+    "Production-ready bilingual property management platform built with Next.js, React, and TypeScript.",
+    "Developed to help apartment owners outsource Airbnb and Booking.com operations through a conversion-focused marketing experience.",
+    "Features include multilingual support, SEO optimization, structured data (JSON-LD), responsive design, automated testing, CI/CD workflows, and production deployment on Vercel.",
+    "The application follows a static-first architecture focused on performance, accessibility, maintainability, and search visibility.",
+  ],
+  keyFeatures: [
+    "Bilingual experience (Bosnian / English)",
+    "SEO optimization (metadata, Open Graph, sitemap, robots.txt)",
+    "JSON-LD structured data",
+    "Responsive design",
+    "Contact form integration",
+    "Automated testing (Unit + E2E)",
+    "CI/CD pipeline with GitHub Actions",
+    "Production deployment on Vercel",
+  ],
+  stack: [
+    "Next.js 16",
+    "React 19",
+    "TypeScript",
+    "Tailwind CSS v4",
+    "Formspree",
+    "Vitest",
+    "Testing Library",
+    "Playwright",
+    "GitHub Actions",
+    "Vercel",
+  ],
+  screenshots: [
+    {
+      src: "/images/urbankey-hero.jpg",
+      alt: "UrbanKey Sarajevo marketing homepage hero",
+      caption: "Hero & conversion-focused landing",
+    },
+    {
+      src: "/images/urbankey-why.png",
+      alt: "UrbanKey Sarajevo why choose us section",
+      caption: "Value proposition & trust signals",
+    },
+    {
+      src: "/images/urbankey-contact.png",
+      alt: "UrbanKey Sarajevo contact and consultation form",
+      caption: "Lead capture & consultation flow",
+    },
+  ],
+} as const;

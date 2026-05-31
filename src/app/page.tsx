@@ -5,7 +5,8 @@ import { ExperienceSection } from "@/components/ExperienceSection";
 import { FitBookCaseStudy } from "@/components/FitBookCaseStudy";
 import { FitBookFeatured } from "@/components/FitBookFeatured";
 import { Hero } from "@/components/Hero";
-import { SecondaryProjects } from "@/components/SecondaryProjects";
+import { UrbanKeyCaseStudy } from "@/components/UrbanKeyCaseStudy";
+import { UrbanKeyFeatured } from "@/components/UrbanKeyFeatured";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -20,7 +21,8 @@ export default function Home() {
         <FitBookFeatured />
         <FitBookCaseStudy />
         <BuiltLikeSaaSSection />
-        <SecondaryProjects />
+        <UrbanKeyFeatured />
+        <UrbanKeyCaseStudy />
         <SkillsSection />
         <ExperienceSection />
         <AboutSection />

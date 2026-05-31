@@ -53,9 +53,6 @@ export const GRID_ENGINEERING =
 export const GRID_SKILLS =
   "mt-8 grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2 lg:gap-4";
 
-export const GRID_PROJECTS =
-  "mt-8 grid min-w-0 grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 md:gap-6 xl:gap-8";
-
 export const GRID_CASE_STUDY =
   "mt-8 grid min-w-0 gap-4 sm:grid-cols-2 sm:gap-4 md:gap-5";
 
