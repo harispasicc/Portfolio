@@ -68,7 +68,7 @@ export const experience = [
     ],
   },
   {
-    company: "PG Forsta",
+    company: "Qualtrics (formerly PG Forsta)",
     location: "Sarajevo",
     title: "Software Engineer",
     period: "Oct 2022 — Present",
