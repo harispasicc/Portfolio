@@ -100,14 +100,14 @@ export function SiteHeader() {
           "sticky top-0 z-50 border-b backdrop-blur-xl transition-[background-color,border-color,box-shadow] duration-300",
           scrolled
             ? "border-[color-mix(in_oklab,var(--border)_85%,transparent)] bg-[color-mix(in_oklab,var(--surface)_78%,transparent)] shadow-[var(--shadow-header)]"
-            : "border-transparent bg-[color-mix(in_oklab,var(--bg)_42%,transparent)] shadow-none",
+            : "border-transparent bg-[color-mix(in_oklab,var(--bg)_42%,transparent)] shadow-none"
         )}
       >
         <div
           className={cn(
             "flex h-[3.25rem] min-w-0 items-center justify-between gap-3 pt-[max(0.625rem,env(safe-area-inset-top))]",
             CONTENT,
-            SECTION_X,
+            SECTION_X
           )}
         >
           <Link
@@ -116,7 +116,7 @@ export function SiteHeader() {
             className="flex min-w-0 items-center gap-2.5 text-sm font-medium tracking-tight text-[var(--fg)] transition-opacity duration-200 hover:opacity-80"
           >
             <Image
-              src="/images/haris-profile.png"
+              src="/images/haris-profile.jpg"
               alt=""
               width={32}
               height={32}
@@ -150,7 +150,7 @@ export function SiteHeader() {
               href="#contact"
               className={cn(
                 talkBtn,
-                "hidden border-[var(--border)] bg-[color-mix(in_oklab,var(--surface)_90%,transparent)] text-[var(--fg)] hover:border-[var(--border-strong)] hover:shadow-[var(--shadow-hover-soft)] md:inline-flex",
+                "hidden border-[var(--border)] bg-[color-mix(in_oklab,var(--surface)_90%,transparent)] text-[var(--fg)] hover:border-[var(--border-strong)] hover:shadow-[var(--shadow-hover-soft)] md:inline-flex"
               )}
             >
               Let&apos;s talk
@@ -173,7 +173,7 @@ export function SiteHeader() {
           id="mobile-nav"
           className={cn(
             "grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden",
-            menuOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+            menuOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
           )}
           aria-hidden={!menuOpen}
         >
@@ -181,7 +181,7 @@ export function SiteHeader() {
             <div
               className={cn(
                 "border-t border-[var(--border)] bg-[color-mix(in_oklab,var(--surface)_94%,var(--bg))] pb-4 backdrop-blur-xl",
-                SECTION_X,
+                SECTION_X
               )}
             >
               <div className={cn(CONTENT, "pt-3")}>
@@ -202,7 +202,7 @@ export function SiteHeader() {
                   onClick={closeMenu}
                   className={cn(
                     talkBtn,
-                    "mt-3 w-full justify-center border-transparent bg-[var(--accent)] text-white shadow-[var(--shadow-sm)] hover:brightness-[1.03]",
+                    "mt-3 w-full justify-center border-transparent bg-[var(--accent)] text-white shadow-[var(--shadow-sm)] hover:brightness-[1.03]"
                   )}
                 >
                   Let&apos;s talk
