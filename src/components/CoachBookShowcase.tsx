@@ -14,31 +14,31 @@ import { cn } from "@/lib/cn";
 const SCREENSHOT_WIDTH = 1024;
 const SCREENSHOT_HEIGHT = 558;
 
-const fitbookScreenshots = [
+const coachbookScreenshots = [
   {
-    href: links.fitbookLive,
-    src: "/images/fitbook-landing.png",
-    alt: "FitBook AI marketing landing page",
-    domain: "fitbook-ai-e2gi.vercel.app",
+    href: links.coachbookLive,
+    src: "/images/coachbook-landing.jpg",
+    alt: "CoachBook marketing landing page",
+    domain: "getcoachbook.com",
     caption: "Marketing site",
   },
   {
-    href: links.fitbookCoachDemo,
-    src: "/images/fitbook-coach-dashboard.png",
-    alt: "FitBook AI coach dashboard with KPIs and calendar",
-    domain: "fitbook-ai-e2gi.vercel.app/dashboard",
+    href: links.coachbookLive,
+    src: "/images/coachbook-coach-dashboard.jpg",
+    alt: "CoachBook coach dashboard with KPIs and calendar",
+    domain: "getcoachbook.com/dashboard",
     caption: "Coach dashboard",
   },
   {
-    href: links.fitbookClientDemo,
-    src: "/images/fitbook-client-dashboard.png",
-    alt: "FitBook AI client home with goals, sessions, and AI assistant",
-    domain: "fitbook-ai-e2gi.vercel.app/me",
+    href: links.coachbookLive,
+    src: "/images/coachbook-client-dashboard.jpg",
+    alt: "CoachBook client home with goals, sessions, and AI assistant",
+    domain: "getcoachbook.com/me",
     caption: "Client app",
   },
 ] as const;
 
-function FitBookScreenshot({
+function CoachBookScreenshot({
   href,
   src,
   alt,
@@ -86,7 +86,7 @@ function FitBookScreenshot({
   );
 }
 
-export function FitBookShowcase({ className }: { className?: string }) {
+export function CoachBookShowcase({ className }: { className?: string }) {
   return (
     <motion.div
       className={cn(className ?? GRID_SHOWCASE)}
@@ -95,29 +95,29 @@ export function FitBookShowcase({ className }: { className?: string }) {
       viewport={{ once: true, margin: "-60px" }}
       variants={staggerContainer}
     >
-      {fitbookScreenshots.map((shot) => (
-        <FitBookScreenshot key={shot.src} {...shot} />
+      {coachbookScreenshots.map((shot) => (
+        <CoachBookScreenshot key={shot.src} {...shot} />
       ))}
     </motion.div>
   );
 }
 
 const productLinks = [
-  { href: links.fitbookClientDemo, label: "Client", external: true },
-  { href: links.fitbookCoachDemo, label: "Coach", external: true },
-  { href: links.fitbookRepo, label: "GitHub", external: true },
-  { href: "#fitbook-case-study", label: "Case study", external: false },
+  { href: links.coachbookPricing, label: "Pricing", external: true },
+  { href: links.coachbookSignup, label: "Sign up", external: true },
+  { href: links.coachbookLogin, label: "Sign in", external: true },
+  { href: "#coachbook-case-study", label: "Case study", external: false },
 ] as const;
 
-export function FitBookActions() {
+export function CoachBookActions() {
   return (
     <aside
       className="w-full lg:sticky lg:top-[5.5rem] lg:w-[14rem] lg:shrink-0 xl:w-[15rem]"
-      aria-label="FitBook links"
+      aria-label="CoachBook links"
     >
       <div className="flex flex-col gap-2">
         <motion.a
-          href={links.fitbookLive}
+          href={links.coachbookLive}
           className={cn(btnPrimarySm, "h-11 w-full justify-center rounded-xl")}
           target="_blank"
           rel="noreferrer"

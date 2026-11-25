@@ -2,8 +2,8 @@ import { AboutSection } from "@/components/AboutSection";
 import { BuiltLikeSaaSSection } from "@/components/BuiltLikeSaaSSection";
 import { ContactSection } from "@/components/ContactSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
-import { FitBookCaseStudy } from "@/components/FitBookCaseStudy";
-import { FitBookFeatured } from "@/components/FitBookFeatured";
+import { CoachBookCaseStudy } from "@/components/CoachBookCaseStudy";
+import { CoachBookFeatured } from "@/components/CoachBookFeatured";
 import { Hero } from "@/components/Hero";
 import { UrbanKeyCaseStudy } from "@/components/UrbanKeyCaseStudy";
 import { UrbanKeyFeatured } from "@/components/UrbanKeyFeatured";
@@ -18,8 +18,8 @@ export default function Home() {
       <SiteHeader />
       <main className="min-w-0 overflow-x-clip">
         <Hero />
-        <FitBookFeatured />
-        <FitBookCaseStudy />
+        <CoachBookFeatured />
+        <CoachBookCaseStudy />
         <BuiltLikeSaaSSection />
         <UrbanKeyFeatured />
         <UrbanKeyCaseStudy />

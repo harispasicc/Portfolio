@@ -3,7 +3,7 @@
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FitBookWordmark } from "@/components/fitbook/FitBookBrand";
+import { CoachBookWordmark } from "@/components/coachbook/CoachBookBrand";
 import { links } from "@/data/site";
 import { heroProductImage } from "@/lib/interaction";
 import { EASE_PREMIUM } from "@/lib/motion";
@@ -77,23 +77,23 @@ export function HeroProductPreview() {
         onMouseLeave={onLeave}
       >
         <div className="mb-2 flex items-center justify-between gap-2 px-0.5 sm:gap-3">
-          <FitBookWordmark className="text-xs sm:text-sm md:text-[15px]" />
+          <CoachBookWordmark className="text-xs sm:text-sm md:text-[15px]" />
           <span className="shrink-0 text-[9px] font-medium text-[var(--fg-muted)] sm:text-[10px]">
-            FitBook AI
+            getcoachbook.com
           </span>
         </div>
 
         <Link
-          href={links.fitbookLive}
+          href={links.coachbookLive}
           target="_blank"
           rel="noreferrer"
           className="group block min-w-0 overflow-hidden rounded-lg ring-1 ring-black/[0.06] transition-[ring-color] duration-300 hover:ring-[color-mix(in_oklab,var(--teal)_25%,var(--border))] sm:rounded-xl"
         >
-          <BrowserChrome domain="fitbook-ai-e2gi.vercel.app/dashboard">
+          <BrowserChrome domain="getcoachbook.com/dashboard">
             <div className="overflow-hidden bg-white">
               <Image
-                src="/images/fitbook-coach-dashboard.png"
-                alt="FitBook AI coach dashboard"
+                src="/images/coachbook-coach-dashboard.jpg"
+                alt="CoachBook coach dashboard"
                 width={1024}
                 height={558}
                 className={heroProductImage}

@@ -14,7 +14,7 @@ import {
   SECTION_X,
   SECTION_Y,
 } from "@/lib/section";
-import { fitbook } from "@/data/site";
+import { coachbook } from "@/data/site";
 import { cn } from "@/lib/cn";
 
 function Block({
@@ -67,11 +67,11 @@ function BulletList({ items }: { items: readonly string[] }) {
   );
 }
 
-export function FitBookCaseStudy() {
+export function CoachBookCaseStudy() {
   return (
     <FadeUp
       as="section"
-      id="fitbook-case-study"
+      id="coachbook-case-study"
       className={cn(sectionTone.raised, SECTION_X, SECTION_Y, "overflow-x-clip")}
     >
       <div className={sectionDividerTop} aria-hidden />
@@ -80,7 +80,7 @@ export function FitBookCaseStudy() {
         <div className="max-w-2xl">
           <p className={SECTION_LABEL}>Case study</p>
           <h2 className={cn("mt-2", SECTION_TITLE)}>
-            How FitBook AI ships a real coaching MVP
+            How CoachBook ships a real coaching MVP
           </h2>
         </div>
 
@@ -92,16 +92,16 @@ export function FitBookCaseStudy() {
           variants={staggerContainer}
         >
           <Block title="Problem" emphasized>
-            <p>{fitbook.problem}</p>
+            <p>{coachbook.problem}</p>
           </Block>
           <Block title="Solution" emphasized>
-            <p>{fitbook.solution}</p>
+            <p>{coachbook.solution}</p>
           </Block>
           <Block title="Core features">
-            <BulletList items={fitbook.features} />
+            <BulletList items={coachbook.features} />
           </Block>
           <Block title="What I built">
-            <BulletList items={fitbook.built} />
+            <BulletList items={coachbook.built} />
           </Block>
         </motion.div>
       </div>
