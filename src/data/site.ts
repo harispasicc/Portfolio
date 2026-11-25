@@ -8,10 +8,10 @@ export const links = {
   github: "https://github.com/harispasicc?tab=repositories",
   linkedin: "https://www.linkedin.com/in/haris-pa%C5%A1i%C4%87-386408171/",
   email: "mailto:harispasic63@gmail.com",
-  fitbookLive: "https://fitbook-ai-e2gi.vercel.app/",
-  fitbookClientDemo: "https://fitbook-ai-e2gi.vercel.app/login?demo=1",
-  fitbookCoachDemo: "https://fitbook-ai-e2gi.vercel.app/trainer/login?demo=1",
-  fitbookRepo: "https://github.com/harispasicc/FitbookAI",
+  coachbookLive: "https://getcoachbook.com/",
+  coachbookPricing: "https://getcoachbook.com/pricing",
+  coachbookSignup: "https://getcoachbook.com/signup",
+  coachbookRepo: "https://github.com/harispasicc/FitbookAI",
   urbankeyRepo: "https://github.com/harispasicc/urbankey-platform",
 } as const;
 
@@ -38,7 +38,7 @@ export const hero = {
 export const about = {
   paragraphs: [
     "I build frontend for products that need to ship, not slide decks. Over five years I've owned React and TypeScript surfaces in healthcare and market research, with a focus on architecture, testing, performance, and calm product UX.",
-    "I recently shipped FitBook AI, a full-stack coaching SaaS MVP end to end. I care about maintainable components, clear API boundaries, and interfaces that feel production-ready from the first release.",
+    "I recently shipped CoachBook (formerly CoachBook), a full-stack coaching SaaS MVP end to end. I care about maintainable components, clear API boundaries, and interfaces that feel production-ready from the first release.",
   ],
   strengths: [
     "Product-minded UI",
@@ -214,8 +214,8 @@ export const saasProductArchitecture = [
   },
 ] as const;
 
-export const fitbook = {
-  name: "FitBook AI",
+export const coachbook = {
+  name: "CoachBook",
   tagline: "Production-oriented full-stack coaching SaaS",
   short:
     "Full-stack coaching MVP with real PostgreSQL data—role-based client and coach dashboards, a full booking lifecycle, JWT auth, and Playwright E2E coverage. Optional AI and email when configured.",

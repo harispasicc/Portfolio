@@ -54,8 +54,8 @@
     0 1px 0 rgba(255, 255, 255, 0.9) inset,
     0 2px 4px rgba(15, 23, 42, 0.08),
     0 36px 80px -32px rgba(15, 23, 42, 0.38);
-  --fitbook-brand-ink: #111827;
-  --fitbook-brand-teal: #0e7474;
+  --coachbook-brand-ink: #111827;
+  --coachbook-brand-teal: #0e7474;
 }
 
 html.dark {
@@ -103,8 +103,8 @@ html.dark {
   --footer-divider: rgba(255, 255, 255, 0.08);
   --link-underline-on-dark: rgba(255, 255, 255, 0.18);
   --ring-on-accent: rgba(255, 255, 255, 0.12);
-  --fitbook-brand-ink: #ffffff;
-  --fitbook-brand-teal: #3dd4c4;
+  --coachbook-brand-ink: #ffffff;
+  --coachbook-brand-teal: #3dd4c4;
   --shadow-product:
     0 1px 0 rgba(255, 255, 255, 0.06) inset,
     0 24px 64px -40px rgba(0, 0, 0, 0.55);

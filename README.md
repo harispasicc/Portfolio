@@ -8,7 +8,7 @@ Personal portfolio for **Haris Pašić**, frontend-focused software engineer. Sh
 
 ## Overview
 
-A static-first Next.js portfolio built to present production work with clear engineering narrative—featured products (FitBook AI, UrbanKey Sarajevo), case study breakdowns, skills, experience, and contact. Content lives in typed data modules; the UI is composed from focused section components with light/dark theme support.
+A static-first Next.js portfolio built to present production work with clear engineering narrative—featured products (CoachBook, UrbanKey Sarajevo), case study breakdowns, skills, experience, and contact. Content lives in typed data modules; the UI is composed from focused section components with light/dark theme support.
 
 ---
 
@@ -16,7 +16,7 @@ A static-first Next.js portfolio built to present production work with clear eng
 
 - **Responsive layout** — mobile-first design from small phones through large desktop viewports
 - **Light / dark theme** — navbar toggle with persisted preference and no-flash bootstrap script
-- **Featured products** — FitBook AI and UrbanKey Sarajevo with live demos, GitHub links, and screenshots
+- **Featured products** — CoachBook and UrbanKey Sarajevo with live demos, GitHub links, and screenshots
 - **Technical case studies** — problem, solution, delivery, CI pipeline, and roadmap (UrbanKey)
 - **Engineering narrative** — SaaS architecture highlights for full-stack product work
 - **Accessible navigation** — primary nav, mobile menu, scroll-to-top, and in-page anchors
@@ -144,7 +144,7 @@ Hosted on Vercel. Pushes to `main` trigger automatic deployments after CI passes
 
 ## Featured work
 
-- **FitBook AI** — Live: [fitbook-ai-e2gi.vercel.app](https://fitbook-ai-e2gi.vercel.app/) · Repo: [FitbookAI](https://github.com/harispasicc/FitbookAI)
+- **CoachBook** — Live: [getcoachbook.com](https://getcoachbook.com/) · Repo: [FitbookAI](https://github.com/harispasicc/FitbookAI)
 - **UrbanKey Sarajevo** — Live: [www.urbankey.ba](https://www.urbankey.ba/) · Repo: [urbankey-platform](https://github.com/harispasicc/urbankey-platform)
 
 ---

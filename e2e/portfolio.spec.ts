@@ -38,9 +38,9 @@ test.describe("portfolio", () => {
     await expect(menuBtn).toHaveAccessibleName(/open menu/i);
   });
 
-  test("exposes FitBook live demo and GitHub links", async ({ page }) => {
+  test("exposes CoachBook live demo and GitHub links", async ({ page }) => {
     const liveDemo = page.getByRole("link", { name: /live demo/i }).first();
-    await expect(liveDemo).toHaveAttribute("href", /fitbook-ai-e2gi\.vercel\.app/);
+    await expect(liveDemo).toHaveAttribute("href", /getcoachbook\.com/);
     await expect(liveDemo).toHaveAttribute("target", "_blank");
 
     const github = page.getByRole("link", { name: /^github$/i }).first();

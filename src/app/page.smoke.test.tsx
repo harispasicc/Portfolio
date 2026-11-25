@@ -27,7 +27,7 @@ describe("Home page smoke", () => {
     renderHome();
 
     const liveDemo = screen.getAllByRole("link", { name: /live demo/i })[0];
-    expect(liveDemo).toHaveAttribute("href", links.fitbookLive);
+    expect(liveDemo).toHaveAttribute("href", links.coachbookLive);
 
     expect(screen.getAllByRole("link", { name: /^github$/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^email$/i })[0]).toHaveAttribute(

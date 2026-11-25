@@ -17,8 +17,8 @@ describe("site data", () => {
     expect(links.github).toMatch(/^https:\/\//);
     expect(links.linkedin).toMatch(/^https:\/\//);
     expect(links.email).toMatch(/^mailto:/);
-    expect(links.fitbookLive).toMatch(/^https:\/\//);
-    expect(links.fitbookRepo).toMatch(/^https:\/\//);
+    expect(links.coachbookLive).toMatch(/^https:\/\//);
+    expect(links.coachbookRepo).toMatch(/^https:\/\//);
     expect(urbankey.live).toMatch(/^https:\/\//);
     expect(urbankey.repo).toBe(links.urbankeyRepo);
   });
