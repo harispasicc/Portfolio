@@ -38,7 +38,7 @@ test.describe("portfolio", () => {
     await expect(menuBtn).toHaveAccessibleName(/open menu/i);
   });
 
-  test("exposes CoachBook live demo and GitHub links", async ({ page }) => {
+  test("exposes the CoachBook live link and a GitHub link", async ({ page }) => {
     const liveDemo = page.getByRole("link", { name: /live demo/i }).first();
     await expect(liveDemo).toHaveAttribute("href", /getcoachbook\.com/);
     await expect(liveDemo).toHaveAttribute("target", "_blank");

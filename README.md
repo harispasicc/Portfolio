@@ -16,7 +16,7 @@ A static-first Next.js portfolio built to present production work with clear eng
 
 - **Responsive layout** — mobile-first design from small phones through large desktop viewports
 - **Light / dark theme** — navbar toggle with persisted preference and no-flash bootstrap script
-- **Featured products** — CoachBook and UrbanKey Sarajevo with live demos, GitHub links, and screenshots
+- **Featured products** — CoachBook and UrbanKey Sarajevo with live links and screenshots (UrbanKey also links to GitHub)
 - **Technical case studies** — problem, solution, delivery, CI pipeline, and roadmap (UrbanKey)
 - **Engineering narrative** — SaaS architecture highlights for full-stack product work
 - **Accessible navigation** — primary nav, mobile menu, scroll-to-top, and in-page anchors
@@ -144,7 +144,7 @@ Hosted on Vercel. Pushes to `main` trigger automatic deployments after CI passes
 
 ## Featured work
 
-- **CoachBook** — Live: [getcoachbook.com](https://getcoachbook.com/) · Repo: [CoachBook](https://github.com/harispasicc/CoachBook)
+- **CoachBook** — Live: [getcoachbook.com](https://getcoachbook.com/) · Private repository (commercial product)
 - **UrbanKey Sarajevo** — Live: [www.urbankey.ba](https://www.urbankey.ba/) · Repo: [urbankey-platform](https://github.com/harispasicc/urbankey-platform)
 
 ---

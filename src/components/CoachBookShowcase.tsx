@@ -105,7 +105,7 @@ export function CoachBookShowcase({ className }: { className?: string }) {
 const productLinks = [
   { href: links.coachbookPricing, label: "Pricing", external: true },
   { href: links.coachbookSignup, label: "Sign up", external: true },
-  { href: links.coachbookRepo, label: "GitHub", external: true },
+  { href: links.coachbookLogin, label: "Sign in", external: true },
   { href: "#coachbook-case-study", label: "Case study", external: false },
 ] as const;
 

@@ -11,7 +11,7 @@ export const links = {
   coachbookLive: "https://getcoachbook.com/",
   coachbookPricing: "https://getcoachbook.com/coach/pricing",
   coachbookSignup: "https://getcoachbook.com/signup",
-  coachbookRepo: "https://github.com/harispasicc/CoachBook",
+  coachbookLogin: "https://getcoachbook.com/login",
   urbankeyRepo: "https://github.com/harispasicc/urbankey-platform",
 } as const;
 
