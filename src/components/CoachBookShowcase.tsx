@@ -17,21 +17,21 @@ const SCREENSHOT_HEIGHT = 558;
 const coachbookScreenshots = [
   {
     href: links.coachbookLive,
-    src: "/images/coachbook-landing.png",
+    src: "/images/coachbook-landing.jpg",
     alt: "CoachBook marketing landing page",
     domain: "getcoachbook.com",
     caption: "Marketing site",
   },
   {
     href: links.coachbookLive,
-    src: "/images/coachbook-coach-dashboard.png",
+    src: "/images/coachbook-coach-dashboard.jpg",
     alt: "CoachBook coach dashboard with KPIs and calendar",
     domain: "getcoachbook.com/dashboard",
     caption: "Coach dashboard",
   },
   {
     href: links.coachbookLive,
-    src: "/images/coachbook-client-dashboard.png",
+    src: "/images/coachbook-client-dashboard.jpg",
     alt: "CoachBook client home with goals, sessions, and AI assistant",
     domain: "getcoachbook.com/me",
     caption: "Client app",

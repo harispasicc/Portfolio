@@ -92,7 +92,7 @@ export function HeroProductPreview() {
           <BrowserChrome domain="getcoachbook.com/dashboard">
             <div className="overflow-hidden bg-white">
               <Image
-                src="/images/coachbook-coach-dashboard.png"
+                src="/images/coachbook-coach-dashboard.jpg"
                 alt="CoachBook coach dashboard"
                 width={1024}
                 height={558}

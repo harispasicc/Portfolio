@@ -144,7 +144,7 @@ Hosted on Vercel. Pushes to `main` trigger automatic deployments after CI passes
 
 ## Featured work
 
-- **CoachBook** — Live: [getcoachbook.com](https://getcoachbook.com/) · Repo: [FitbookAI](https://github.com/harispasicc/FitbookAI)
+- **CoachBook** — Live: [getcoachbook.com](https://getcoachbook.com/) · Repo: [CoachBook](https://github.com/harispasicc/CoachBook)
 - **UrbanKey Sarajevo** — Live: [www.urbankey.ba](https://www.urbankey.ba/) · Repo: [urbankey-platform](https://github.com/harispasicc/urbankey-platform)
 
 ---

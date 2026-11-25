@@ -9,9 +9,9 @@ export const links = {
   linkedin: "https://www.linkedin.com/in/haris-pa%C5%A1i%C4%87-386408171/",
   email: "mailto:harispasic63@gmail.com",
   coachbookLive: "https://getcoachbook.com/",
-  coachbookPricing: "https://getcoachbook.com/pricing",
+  coachbookPricing: "https://getcoachbook.com/coach/pricing",
   coachbookSignup: "https://getcoachbook.com/signup",
-  coachbookRepo: "https://github.com/harispasicc/FitbookAI",
+  coachbookRepo: "https://github.com/harispasicc/CoachBook",
   urbankeyRepo: "https://github.com/harispasicc/urbankey-platform",
 } as const;
 
@@ -38,7 +38,7 @@ export const hero = {
 export const about = {
   paragraphs: [
     "I build frontend for products that need to ship, not slide decks. Over five years I've owned React and TypeScript surfaces in healthcare and market research, with a focus on architecture, testing, performance, and calm product UX.",
-    "I recently shipped CoachBook (formerly CoachBook), a full-stack coaching SaaS MVP end to end. I care about maintainable components, clear API boundaries, and interfaces that feel production-ready from the first release.",
+    "I recently shipped CoachBook, a full-stack SaaS for personal trainers, end to end. I care about maintainable components, clear API boundaries, and interfaces that feel production-ready from the first release.",
   ],
   strengths: [
     "Product-minded UI",
